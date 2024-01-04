@@ -4,15 +4,13 @@ La App Convertidor de Unidades permite realizar conversiones entre varios tipos 
 
 ## Iniciar la App
 
-![Preview](https://i.imgur.com/ZMAMX5v.png)
-
 Para iniciar la aplicación, sigue estos pasos:
 
-1. **Clonar el repositorio:**
-   Asegúrate de tener Git instalado y ejecuta el siguiente comando en tu terminal:
-
    ```bash
-   $ git clone https://github.com/tu-usuario/oxygen.git
 $ cd oxygen
+```bash
 $ npm install
+```bash
 $ npm run start
+
+![Preview](https://i.imgur.com/ZMAMX5v.png)
