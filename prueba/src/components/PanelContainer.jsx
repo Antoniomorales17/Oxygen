@@ -5,22 +5,32 @@ import PanelImputs from "./PanelImputs";
 import PanelHistory from "./PanelHistory";
 
 function Panel() {
+  
   const [output, setOutput] = useState(null);
+
+  
   const [input, setInput] = useState(null);
+
+  
   const [params, setParams] = useState(optionParams[0]);
+
+  
   const [history, setHistory] = useState(
     JSON.parse(localStorage.getItem("history")) || []
   );
 
+ 
   function handleChange(e) {
     setInput(e.target.value === "" ? null : parseFloat(e.target.value));
   }
 
+  
   function handleOnKeyUp(e) {
     const inputValue = e.target.value;
     setOutput((inputValue * params.factor).toFixed(2));
   }
 
+  
   function handleOptionChange(e) {
     const optionSelected = parseInt(e.target.value);
     setInput(null);
@@ -28,6 +38,7 @@ function Panel() {
     setParams(optionParams[optionSelected - 1]);
   }
 
+  
   function toggleInput(data) {
     const optionFactor = data.params.option % 2 === 0 ? -1 : 1;
     const newOption = data.params.option + optionFactor;
@@ -36,6 +47,7 @@ function Panel() {
     setParams(optionParams[newOption - 1]);
   }
 
+  
   async function putInHistory(result) {
     if (!input || !output) return;
     setHistory([...history, result]);
@@ -43,20 +55,24 @@ function Panel() {
     setOutput(null);
   }
 
+  
   async function deleteItem(index) {
     const newHistory = [...history];
     newHistory.splice(index, 1);
     setHistory(newHistory);
   }
 
+  
   function saveHistory(list) {
     localStorage.setItem("history", JSON.stringify(list));
   }
 
+  
   useEffect(() => {
     saveHistory(history);
   }, [history]);
 
+  
   return (
     <div className="container">
       <PanelImputs
