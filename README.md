@@ -10,7 +10,7 @@ La App Convertidor de Unidades permite realizar conversiones entre varios tipos 
 Para iniciar la aplicación, sigue estos pasos:
 
    ```bash
-$ cd oxygen
+$ cd prueba
 
 $ npm install
 
